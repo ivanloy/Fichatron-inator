@@ -1,24 +1,36 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { CharacterSheet } from './screens/CharacterSheet';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-function App() {
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: '#afa995',
+      main: '#504b3a',
+      dark: '#2d291a',
+      contrastText: '#FFEDB1',
+    },
+    secondary: {
+      light: '#bde6f2',
+      main: '#6ab8d9',
+      dark: '#508bb1',
+      contrastText: '#21160E',
+    },
+    background: {
+      default: "#000000"
+    }
+  },
+});
+
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeProvider theme={theme}>
+        <CharacterSheet  />
+      </ThemeProvider>
     </div>
   );
 }
