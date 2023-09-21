@@ -3,7 +3,9 @@ import { BasicData } from "../components/characterSheet/BasicData";
 import { Box, Button, Container, Paper, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { Characterization } from "../components/characterSheet/Characterization";
-import { PersonalCharacteristics } from "../components/characterSheet/PersonalCharacteristics";
+import { Strengths } from "../components/characterSheet/Strengths";
+import { BattleStyle } from "../components/characterSheet/BattleStyle";
+import { StatsChart } from "../components/characterSheet/StatsChart";
 
 export interface IFormInput {
 	name: string,
@@ -62,7 +64,23 @@ export const CharacterSheet = () => {
 					/>
 				</Box>
 				<Box sx={{ marginBottom: 3}}>
-					<PersonalCharacteristics
+					<Strengths
+						control={control}
+					/>
+				</Box>
+				<Box sx={{ marginBottom: 3}}>
+					<Strengths
+						control={control}
+						isWeaknesses
+					/>
+				</Box>
+				<Box sx={{ marginBottom: 3}}>
+					<BattleStyle
+						control={control}
+					/>
+				</Box>
+				<Box sx={{ marginBottom: 3}}>
+					<StatsChart
 						control={control}
 					/>
 				</Box>

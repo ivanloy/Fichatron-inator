@@ -1,7 +1,5 @@
-import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from '../../redux/store';
 import { FormInputText } from '../form/FormInputText';
-import { Box, Divider, Paper, Typography } from '@mui/material';
+import { Box, Paper, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2'; 
 import { IFormInput } from '../../screens/CharacterSheet';
 import { Control } from 'react-hook-form';
@@ -11,7 +9,7 @@ type CharacterizationProps = {
 	control: Control<IFormInput, any>;
 }
 
-export const PersonalCharacteristics = (props : CharacterizationProps) => {
+export const BattleStyle = (props : CharacterizationProps) => {
 	const { control } = props;
 
 	return (
@@ -22,14 +20,14 @@ export const PersonalCharacteristics = (props : CharacterizationProps) => {
 			}}
 		>
 			<Box display="flex">
-				<Typography color="secondary.dark" variant="overline" sx={{ marginBottom: 1, fontSize: 20, fontWeight: 600 }}>Características personales</Typography>
+				<Typography color="secondary.dark" variant="overline" sx={{ marginBottom: 1, fontSize: 20, fontWeight: 600 }}>Estilo de combate</Typography>
 			</Box>
 			<Grid container spacing={2} sx={{ marginBottom: 3 }}>
 				<Grid xs={12}>
 					<FormInputText
-						name="strengths"
+						name="battleStyle"
 						control={control}
-						label="Fortalezas"
+						label="Estilo de lucha"
 						multiLine
 						minRows={5}
 						maxRows={20}
@@ -38,9 +36,9 @@ export const PersonalCharacteristics = (props : CharacterizationProps) => {
 				<GridDivider />
 				<Grid xs={12}>
 					<FormInputText
-						name="weaknesses"
+						name="weapons"
 						control={control}
-						label="Debilidades"
+						label="Armas"
 						multiLine
 						minRows={5}
 						maxRows={20}

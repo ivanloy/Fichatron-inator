@@ -1,7 +1,5 @@
-import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from '../../redux/store';
 import { FormInputText } from '../form/FormInputText';
-import { Box, Divider, Paper, Typography } from '@mui/material';
+import { Box, Paper, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2'; 
 import { IFormInput } from '../../screens/CharacterSheet';
 import { Control } from 'react-hook-form';

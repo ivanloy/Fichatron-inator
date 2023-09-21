@@ -1,5 +1,6 @@
-import { Controller } from "react-hook-form";
+import { Control, Controller } from "react-hook-form";
 import TextField from "@mui/material/TextField";
+import { IFormInput } from "../../screens/CharacterSheet";
 
 type FormInputTextProps = {
 	name: string;
