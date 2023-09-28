@@ -31,10 +31,12 @@ export const Strengths = (props : StrengthsProps) => {
 				padding: 30,
 			}}
 		>
-			<StrengthsTable
-				data={data}
-			/>
 			<SectionTitle title={isWeaknesses ? "Debilidades" : "Fortalezas"} />
+			<Box sx={{ marginBottom: 3 }} >
+				<StrengthsTable
+					data={data}
+				/>
+			</Box>
 			<Grid container spacing={2}>
 				<Grid xs={12}>
 					{data.map((item, index) => (

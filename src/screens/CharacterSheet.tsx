@@ -11,6 +11,7 @@ import { MedalCount } from "../components/characterSheet/MedalCount";
 import { KnowledgeLevels } from "../components/characterSheet/KnowledgeLevels";
 import { Skills } from "../components/characterSheet/Skills";
 import { Items } from "../components/characterSheet/Items";
+import { getImportedCharacter } from "../util/import/getImportedCharacter";
 
 export interface IFormInput {
 	name: string,
@@ -21,6 +22,7 @@ export interface IFormInput {
 	faction: string,
 	gender: string,
 	employment: string,
+	background: string,
 }
 
 const defaultValues: IFormInput = {
@@ -32,6 +34,7 @@ const defaultValues: IFormInput = {
 	faction: '',
 	gender: '',
 	employment: '',
+	background: '',
 }
 
 export const CharacterSheet = () => {
@@ -40,6 +43,7 @@ export const CharacterSheet = () => {
 	});
 
 	const onSubmit = (data: IFormInput) => {
+		getImportedCharacter(data.background)
 		console.log(data);
 	};
 
