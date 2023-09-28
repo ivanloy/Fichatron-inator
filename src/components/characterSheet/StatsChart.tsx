@@ -91,7 +91,7 @@ export const StatsChart = (props: StatsChartProps) => {
               </Grid>
               <Grid xs={3}>
                 <FormInputText
-                  name={`${stat.key}Bonus}`}
+                  name={`${stat.key}Bonus`}
                   control={props.control}
                   label={"Bonus"}
                 />

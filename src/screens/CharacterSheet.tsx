@@ -9,6 +9,8 @@ import { StatsChart } from "../components/characterSheet/StatsChart";
 import { HakiLevels } from "../components/characterSheet/HakiLevels";
 import { MedalCount } from "../components/characterSheet/MedalCount";
 import { KnowledgeLevels } from "../components/characterSheet/KnowledgeLevels";
+import { Skills } from "../components/characterSheet/Skills";
+import { Items } from "../components/characterSheet/Items";
 
 export interface IFormInput {
 	name: string,
@@ -70,6 +72,8 @@ export const CharacterSheet = () => {
 				<HakiLevels control={control} />
 				<MedalCount control={control} />
 				<KnowledgeLevels control={control} />
+				<Skills control={control} />
+				<Items control={control} />
 				<Button onClick={handleSubmit(onSubmit)} variant={"contained"}>
 					Submit
 				</Button>

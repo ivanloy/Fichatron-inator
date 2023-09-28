@@ -1,6 +1,6 @@
 import { Control } from "react-hook-form";
-import { IFormInput } from "../../screens/CharacterSheet";
-import { DropdownOption, FormInputDropdown } from "../form/FormInputDropdown";
+import { IFormInput } from "../../../screens/CharacterSheet";
+import { DropdownOption, FormInputDropdown } from "./FormInputDropdown";
 
 type RankDropdownProps = {
   id: string;

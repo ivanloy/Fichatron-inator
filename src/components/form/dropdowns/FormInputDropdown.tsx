@@ -1,7 +1,7 @@
 
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { Control, Controller } from "react-hook-form";
-import { IFormInput } from "../../screens/CharacterSheet";
+import { IFormInput } from "../../../screens/CharacterSheet";
 
 export type DropdownOption = {
   label: string;
