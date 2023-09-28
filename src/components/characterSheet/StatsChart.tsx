@@ -2,6 +2,7 @@ import Grid from '@mui/material/Unstable_Grid2';
 import { FormInputText } from '../form/FormInputText';
 import { Box, Paper, Typography } from '@mui/material';
 import { stat } from 'fs';
+import { SectionTitle } from '../form/SectionTitle';
 
 type StatsChartProps = {
   control: any;
@@ -73,9 +74,7 @@ export const StatsChart = (props: StatsChartProps) => {
         padding: 30,
       }}
     >
-      <Box display="flex">
-				<Typography color="secondary.dark" variant="overline" sx={{ marginBottom: 1, fontSize: 20, fontWeight: 600 }}>Atributos</Typography>
-			</Box>
+      <SectionTitle title="Atributos" />
       <Grid container spacing={2}>
         {
           stats.map((stat) => (

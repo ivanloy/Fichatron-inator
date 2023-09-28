@@ -6,6 +6,9 @@ import { Characterization } from "../components/characterSheet/Characterization"
 import { Strengths } from "../components/characterSheet/Strengths";
 import { BattleStyle } from "../components/characterSheet/BattleStyle";
 import { StatsChart } from "../components/characterSheet/StatsChart";
+import { HakiLevels } from "../components/characterSheet/HakiLevels";
+import { MedalCount } from "../components/characterSheet/MedalCount";
+import { KnowledgeLevels } from "../components/characterSheet/KnowledgeLevels";
 
 export interface IFormInput {
 	name: string,
@@ -43,6 +46,9 @@ export const CharacterSheet = () => {
 			<Paper
 				elevation={5}
 				sx={{
+					display: "flex",
+					flexDirection: "column",
+					rowGap: 3,
 					padding: 6,
 					backgroundColor: "primary.light",
 				}}
@@ -53,37 +59,17 @@ export const CharacterSheet = () => {
 					sx={{ marginBottom: 3 }}>
 						Fichatrón - inator
 				</Typography>
-				<Box sx={{ marginBottom: 3}}>
-					<BasicData
-						control={control}
-					/>
-				</Box>
-				<Box sx={{ marginBottom: 3}}>
-					<Characterization
-						control={control}
-					/>
-				</Box>
-				<Box sx={{ marginBottom: 3}}>
-					<Strengths
-						control={control}
-					/>
-				</Box>
-				<Box sx={{ marginBottom: 3}}>
-					<Strengths
-						control={control}
-						isWeaknesses
-					/>
-				</Box>
-				<Box sx={{ marginBottom: 3}}>
-					<BattleStyle
-						control={control}
-					/>
-				</Box>
-				<Box sx={{ marginBottom: 3}}>
-					<StatsChart
-						control={control}
-					/>
-				</Box>
+				<BasicData control={control} />
+				<Characterization control={control} />
+				<Strengths control={control} />
+				<Strengths control={control}
+					isWeaknesses
+				/>
+				<BattleStyle control={control} />
+				<StatsChart control={control} />
+				<HakiLevels control={control} />
+				<MedalCount control={control} />
+				<KnowledgeLevels control={control} />
 				<Button onClick={handleSubmit(onSubmit)} variant={"contained"}>
 					Submit
 				</Button>

@@ -4,6 +4,7 @@ import Grid from '@mui/material/Unstable_Grid2';
 import { IFormInput } from '../../screens/CharacterSheet';
 import { Control } from 'react-hook-form';
 import { GridDivider } from '../form/GridDivider';
+import { SectionTitle } from '../form/SectionTitle';
 
 type CharacterizationProps = {
 	control: Control<IFormInput, any>;
@@ -19,10 +20,8 @@ export const Characterization = (props : CharacterizationProps) => {
 				padding: 30,
 			}}
 		>
-			<Box display="flex">
-				<Typography color="secondary.dark" variant="overline" sx={{ marginBottom: 1, fontSize: 20, fontWeight: 600 }}>Caracterización</Typography>
-			</Box>
-			<Grid container spacing={2} sx={{ marginBottom: 3 }}>
+			<SectionTitle title="Caracterización" />
+			<Grid container spacing={2}>
 				<Grid xs={12}>
 					<FormInputText
 						name="background"

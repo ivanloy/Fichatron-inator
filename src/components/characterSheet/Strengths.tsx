@@ -4,8 +4,9 @@ import { IFormInput } from '../../screens/CharacterSheet';
 import { Control } from 'react-hook-form';
 import { GridDivider } from '../form/GridDivider';
 import { StrengthRow } from './StrengthRow';
-import React from 'react';
+import React, { useState } from 'react';
 import { StrengthsTable } from './StrengthsTable';
+import { SectionTitle } from '../form/SectionTitle';
 
 type StrengthsProps = {
 	control: Control<IFormInput, any>;
@@ -21,7 +22,7 @@ export type StrengthItem = {
 
 export const Strengths = (props : StrengthsProps) => {
 	const { control, isWeaknesses = false } = props;
-	const [data, setData] = React.useState<StrengthItem[]>([{id: 0, rank: 120, name: "Patata fantastica", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"}, {id: 1, rank: 80, name: "Depresion", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"}, {id: 2, rank: 40, name: "Kaladinismo", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"} ]);
+	const [data, setData] = useState<StrengthItem[]>([{id: 0, rank: 120, name: "Patata fantastica", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"}, {id: 1, rank: 80, name: "Depresion", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"}, {id: 2, rank: 40, name: "Kaladinismo", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"} ]);
 
 	return ( //TODO Different views (Normal, edit, table)
 		<Paper
@@ -33,10 +34,8 @@ export const Strengths = (props : StrengthsProps) => {
 			<StrengthsTable
 				data={data}
 			/>
-			<Box display="flex">
-				<Typography color="secondary.dark" variant="overline" sx={{ marginBottom: 1, fontSize: 20, fontWeight: 600 }}>{isWeaknesses ? "Debilidades" : "Fortalezas"}</Typography>
-			</Box>
-			<Grid container spacing={2} sx={{ marginBottom: 3 }}>
+			<SectionTitle title={isWeaknesses ? "Debilidades" : "Fortalezas"} />
+			<Grid container spacing={2}>
 				<Grid xs={12}>
 					{data.map((item, index) => (
 						<>
