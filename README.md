@@ -2,15 +2,15 @@
 Y está aquí para quedarse!!
 
 ## Progreso 1.0
-[x] Layout
-[ ] Importar datos con html de ficha
-[ ] Header
-[ ] Tablas fortalezas/debilidades/técnicas/objetos
-[ ] Conexion con base de datos
-[ ] State logic
-[ ] Tabla fichas base de datos
-[ ] Exportar html ficha
-[ ] Código / Pin / Contraseña para proteger edicion de tu ficha
+- [x] Layout
+- [ ] Importar datos con html de ficha
+- [ ] Header
+- [ ] Tablas fortalezas/debilidades/técnicas/objetos
+- [ ] Conexion con base de datos
+- [ ] State logic
+- [ ] Tabla fichas base de datos
+- [ ] Exportar html ficha
+- [ ] Código / Pin / Contraseña para proteger edicion de tu ficha
 
 ## Backlog 1.X
 - Requisitos técnicas con <Chip>
