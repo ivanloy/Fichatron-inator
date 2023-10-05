@@ -19,7 +19,8 @@ export type ItemItem = {
 
 export const Items = (props: ItemsProps) => {
   const { control } = props;
-	const [data, setData] = useState<ItemItem[]>([{id: 0, category: "epic", abilities: "Fisica", name: "Patata fantastica", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"}, {id: 1, category: "epic", abilities: "Fisica", name: "Patata fantastica", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"}, {id: 2, category: "epic", abilities: "Fisica", name: "Patata fantastica", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"} ]);
+	// const [data, setData] = useState<ItemItem[]>([{id: 0, category: "epic", abilities: "Fisica", name: "Patata fantastica", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"}, {id: 1, category: "epic", abilities: "Fisica", name: "Patata fantastica", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"}, {id: 2, category: "epic", abilities: "Fisica", name: "Patata fantastica", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"} ]);
+	const [data, setData] = useState<ItemItem[]>([]);
 
   return (
     <Paper

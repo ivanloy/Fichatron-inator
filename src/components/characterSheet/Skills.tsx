@@ -19,7 +19,8 @@ export type SkillItem = {
 
 export const Skills = (props: SkillsProps) => {
   const { control } = props;
-	const [data, setData] = useState<SkillItem[]>([{id: 0, category: "epic", nature: "Fisica", name: "Patata fantastica", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"}, {id: 1, category: "epic", nature: "Fisica", name: "Patata fantastica", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"}, {id: 2, category: "epic", nature: "Fisica", name: "Patata fantastica", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"} ]);
+	// const [data, setData] = useState<SkillItem[]>([{id: 0, category: "epic", nature: "Fisica", name: "Patata fantastica", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"}, {id: 1, category: "epic", nature: "Fisica", name: "Patata fantastica", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"}, {id: 2, category: "epic", nature: "Fisica", name: "Patata fantastica", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"} ]);
+	const [data, setData] = useState<SkillItem[]>([]);
 
   return (
     <Paper

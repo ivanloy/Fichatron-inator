@@ -3,24 +3,21 @@ import { getBasicFieldRegex, getBigBoxRegex, getStatsRegex } from "./regex";
 const getBasicField = (fieldName: string, htmlIn:string) => {
 	let regex = getBasicFieldRegex(fieldName);
 	const value = htmlIn.match(regex)![1];
-  console.log(value);
   return value;
 }
 
 const getBigBoxField = (fieldName: string, htmlIn:string) => {
 	let regex = getBigBoxRegex(fieldName);
 	const value = htmlIn.match(regex)![1];
-  console.log(value);
   return value;
 }
 
 const getStatFields = (fieldName: string, htmlIn:string) => {
 	let regex = getStatsRegex(fieldName);
 	const powerStats = htmlIn.match(regex);
-	const base = powerStats![1];
-	const bonus = powerStats![2];
-	const total = powerStats![3];
-  console.log(base, bonus, total);
+	const base = parseInt(powerStats![1]);
+	const bonus = parseInt(powerStats![2]);
+	const total = parseInt(powerStats![3]);
   return {base, bonus, total};
 }
 
@@ -31,9 +28,8 @@ const getListFields = (fieldName: string, htmlIn:string) => {
 	const mappedList = [];
 
 	for(let i = 0; i < dataArray.length; i = i+2){
-    mappedList.push({name: dataArray[i], level: dataArray[i+1]});
+    mappedList.push({name: dataArray[i], value: dataArray[i+1]});
 	}
-  console.log(mappedList);
   return mappedList; //TODO map to flat array with form names
 }
 
@@ -54,7 +50,6 @@ const getSkillFields = (fieldName: string, htmlIn:string) => {
       } 
     );
 	}
-  console.log(mappedList);
   return mappedList; //TODO map to flat array with form names
 }
 
@@ -74,7 +69,6 @@ const getItemFields = (fieldName: string, htmlIn:string) => { //TODO duplicated 
       } 
     );
 	}
-  console.log(mappedList);
   return mappedList; //TODO map to flat array with form names
 }
 

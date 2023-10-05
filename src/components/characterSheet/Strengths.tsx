@@ -22,7 +22,8 @@ export type StrengthItem = {
 
 export const Strengths = (props : StrengthsProps) => {
 	const { control, isWeaknesses = false } = props;
-	const [data, setData] = useState<StrengthItem[]>([{id: 0, rank: 120, name: "Patata fantastica", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"}, {id: 1, rank: 80, name: "Depresion", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"}, {id: 2, rank: 40, name: "Kaladinismo", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"} ]);
+	// const [data, setData] = useState<StrengthItem[]>([{id: 0, rank: 120, name: "Patata fantastica", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"}, {id: 1, rank: 80, name: "Depresion", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"}, {id: 2, rank: 40, name: "Kaladinismo", description: "Lorem ipsum dolor sit amet sin pecado concebido no se que no se cuanto patata hijo de la gran perra hehe"} ]);
+	const [data, setData] = useState<StrengthItem[]>([]);
 
 	return ( //TODO Different views (Normal, edit, table)
 		<Paper

@@ -11,7 +11,6 @@ type ItemRowProps = {
 
 export const ItemRow = (props: ItemRowProps) => {
   const { control, id } = props;
-  console.log(id)
   return(
     <Grid container spacing={2} justifyContent="flex-start">
       <Grid lg={3} xs={6}>

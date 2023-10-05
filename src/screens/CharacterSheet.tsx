@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BasicData } from "../components/characterSheet/BasicData";
 import { Box, Button, Container, Paper, Typography } from "@mui/material";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import { Characterization } from "../components/characterSheet/Characterization";
 import { Strengths } from "../components/characterSheet/Strengths";
 import { BattleStyle } from "../components/characterSheet/BattleStyle";
@@ -14,15 +14,39 @@ import { Items } from "../components/characterSheet/Items";
 import { getImportedCharacter } from "../util/import/getImportedCharacter";
 
 export interface IFormInput {
-	name: string,
-	imageUrl: string,
-	nickname: string,
-	age: string,
-	race: string,
-	faction: string,
-	gender: string,
-	employment: string,
-	background: string,
+	name?: string,
+	imageUrl?: string,
+	nickname?: string,
+	age?: string,
+	race?: string,
+	faction?: string,
+	gender?: string,
+	employment?: string,
+	background?: string,
+	personality?: string;
+	appearance?: string;
+	battleStyle?: string;
+	weapons?: string;
+	strength?: number;
+	strengthBonus?: number;
+	fortitude?: number;
+	fortitudeBonus?: number;
+	speed?: number;
+	speedBonus?: number;
+	agility?: number;
+	agilityBonus?: number;
+	dexterity?: number;
+	dexterityBonus?: number;
+	precision?: number;
+	precisionBonus?: number;
+	intellect?: number;
+	intellectBonus?: number;
+	sharpness?: number;
+	sharpnessBonus?: number;
+	instinct?: number;
+	instinctBonus?: number;
+	energy?: number;
+	energyBonus?: number;
 }
 
 const defaultValues: IFormInput = {
@@ -43,7 +67,47 @@ export const CharacterSheet = () => {
 	});
 
 	const onSubmit = (data: IFormInput) => {
-		getImportedCharacter(data.background)
+		const importedData = getImportedCharacter(data.background!);
+		console.log(importedData);
+		setValue("name", importedData.name);
+		setValue("imageUrl", importedData.imageUrl);
+		setValue("nickname", importedData.nickname);
+		setValue("age", importedData.age);
+		setValue("race", importedData.race);
+		setValue("faction", importedData.faction);
+		setValue("gender", importedData.gender);
+		setValue("employment", importedData.employment);
+		// setValue("background", importedData.background);
+		setValue("personality", importedData.personality);
+		setValue("appearance", importedData.appearance);
+		setValue("battleStyle", importedData.battleStyle);
+		setValue("weapons", importedData.weapons);
+		setValue("strength", importedData.strength ? importedData.strength.base : 4);
+		setValue("strengthBonus", importedData.strength ? importedData.strength.bonus : 0);
+		setValue("fortitude", importedData.fortitude ? importedData.fortitude.base : 4);
+		setValue("fortitudeBonus", importedData.fortitude ? importedData.fortitude.bonus : 0);
+		setValue("speed", importedData.speed ? importedData.speed.base : 4);
+		setValue("speedBonus", importedData.speed ? importedData.speed.bonus : 0);
+		setValue("agility", importedData.agility ? importedData.agility.base : 4);
+		setValue("agilityBonus", importedData.agility ? importedData.agility.bonus : 0);
+		setValue("dexterity", importedData.dexterity ? importedData.dexterity.base : 4);
+		setValue("dexterityBonus", importedData.dexterity ? importedData.dexterity.bonus : 0);
+		setValue("precision", importedData.precision ? importedData.precision.base : 4);
+		setValue("precisionBonus", importedData.precision ? importedData.precision.bonus : 0);
+		setValue("intellect", importedData.intellect ? importedData.intellect.base : 4);
+		setValue("intellectBonus", importedData.intellect ? importedData.intellect.bonus : 0);
+		setValue("sharpness", importedData.sharpness ? importedData.sharpness.base : 4);
+		setValue("sharpnessBonus", importedData.sharpness ? importedData.sharpness.bonus : 0);
+		setValue("instinct", importedData.instinct ? importedData.instinct.base : 4);
+		setValue("instinctBonus", importedData.instinct ? importedData.instinct.bonus : 0);
+		setValue("energy", importedData.energy ? importedData.energy.base : 4);
+		setValue("energyBonus", importedData.energy ? importedData.energy.bonus : 0);
+		if(importedData.knowledges){
+			importedData.knowledges.forEach((knowledge, index) => {
+				// setValue(`knowledges-${index}-name`, knowledge.name);
+				// setValue(`knowledges-${index}-value`, knowledge.value);
+			});
+		}
 		console.log(data);
 	};
 
