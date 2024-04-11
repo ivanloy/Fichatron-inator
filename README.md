@@ -24,6 +24,7 @@ Y está aquí para quedarse!!
 - Cronología
 - Editor de islas
 - Editor de NPCs
+- Campos custom
 
 ## Para nuevas ideas, features o diseños
 Contacto por MD de discord a "ivanloy"

@@ -1,18 +1,18 @@
-import { getBasicField, getBigBoxField, getItemFields, getListFields, getSkillFields, getStatFields } from "./getFields";
-import { getBasicFieldRegex } from "./regex";
+import {getBasicField, getBigBoxField, getItemFields, getListFields, getSkillFields, getStatFields} from "./getFields";
+import {getBasicFieldRegex} from "./regex";
 
-type Stat = {
+export type Stat = {
 	base: number;
 	bonus: number;
 	total: number;
 }
 
-type ListFieldItem = {
+export type ListFieldItem = {
 	name: string;
 	value: string;
 }
 
-type CharacterSheet = {
+export type CharacterSheet = {
 	name?: string;
 	imageUrl?: string;
 	nickname?: string;
@@ -50,7 +50,7 @@ export const getImportedCharacter = (htmlIn: string) => {
 	regex = new RegExp(`background-image: url\\((.+?)\\)`);
 	const imageUrl = htmlIn.match(regex)![1];
 
-	const characterSheet : CharacterSheet = {};
+	const characterSheet: CharacterSheet = {};
 
 	characterSheet.name = name;
 	characterSheet.imageUrl = imageUrl;
@@ -84,8 +84,8 @@ export const getImportedCharacter = (htmlIn: string) => {
 	characterSheet.haki = getListFields("Haki", htmlIn);
 	characterSheet.medals = getListFields("Medallas", htmlIn);
 
-	getSkillFields("Técnicas", htmlIn);
-	getItemFields("Pertenencias", htmlIn);
+	// getSkillFields("Técnicas", htmlIn);
+	// getItemFields("Pertenencias", htmlIn);
 
 	return characterSheet;
 }
