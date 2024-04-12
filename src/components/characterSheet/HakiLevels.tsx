@@ -1,19 +1,20 @@
-import {Control} from "react-hook-form";
-import {IFormInput} from "../../screens/CharacterSheet";
-import {Box, Paper, Typography} from "@mui/material";
-import {FormInputText} from "../form/FormInputText";
-import Grid from '@mui/material/Unstable_Grid2';
-import {SectionTitle} from "../form/SectionTitle";
-import {useSelector} from "react-redux";
-import {RootState} from "../../redux/store";
+import { Box, Paper, Typography } from "@mui/material";
+import Grid from "@mui/material/Unstable_Grid2";
+import { Control } from "react-hook-form";
+import { useSelector } from "react-redux";
+
+import { RootState } from "../../redux/store";
+import { IFormInput } from "../../screens/CharacterSheet";
+import { FormInputText } from "../form/FormInputText";
+import { SectionTitle } from "../form/SectionTitle";
 
 type HakiLevelsProps = {
   control: Control<IFormInput, any>;
-}
+};
 
 export const HakiLevels = (props: HakiLevelsProps) => {
-  const {control} = props;
-  const {haki} = useSelector((state: RootState) => state.characterData);
+  const { control } = props;
+  const { haki } = useSelector((state: RootState) => state.characterData);
   //FIXME lodash isNIl haki. Default to empty string in state
   return (
     <Paper
@@ -35,7 +36,7 @@ export const HakiLevels = (props: HakiLevelsProps) => {
         <Grid xs={12} lg={4}>
           <FormInputText
             stateValue={haki ? haki[1].value : ""}
-            name="armoredHaki"
+            name="armamentHaki"
             control={control}
             label="Haki de armadura"
           />
@@ -43,12 +44,12 @@ export const HakiLevels = (props: HakiLevelsProps) => {
         <Grid xs={12} lg={4}>
           <FormInputText
             stateValue={haki ? haki[2].value : ""}
-            name="kingHaki"
+            name="conquerorsHaki"
             control={control}
             label="Haki del rey"
           />
         </Grid>
       </Grid>
     </Paper>
-  )
-}
+  );
+};

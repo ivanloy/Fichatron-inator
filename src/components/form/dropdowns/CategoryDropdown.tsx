@@ -1,15 +1,16 @@
 import { Control } from "react-hook-form";
+
 import { IFormInput } from "../../../screens/CharacterSheet";
 import { DropdownOption, FormInputDropdown } from "./FormInputDropdown";
 
 type CategoryDropdownProps = {
   id: string;
   control: Control<IFormInput, any>;
-}
+};
 
 export const CategoryDropdown = (props: CategoryDropdownProps) => {
   const { control, id } = props;
-  const options : DropdownOption[] = [
+  const options: DropdownOption[] = [
     {
       label: "Especial",
       value: "Especial",
@@ -29,11 +30,12 @@ export const CategoryDropdown = (props: CategoryDropdownProps) => {
     {
       label: "Definitiva",
       value: "Definitiva",
-    }
+    },
   ];
 
   return (
     <FormInputDropdown
+      onChange={() => {}}
       name={`category-name-${id}`}
       control={control}
       label="Rango"
@@ -41,4 +43,4 @@ export const CategoryDropdown = (props: CategoryDropdownProps) => {
       options={options}
     />
   );
-}
+};

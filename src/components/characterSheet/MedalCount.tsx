@@ -1,11 +1,12 @@
-import {Control} from "react-hook-form";
-import {IFormInput} from "../../screens/CharacterSheet";
-import {Box, Paper, Typography} from "@mui/material";
-import {FormInputText} from "../form/FormInputText";
+import { Box, Paper, Typography } from "@mui/material";
 import Grid from '@mui/material/Unstable_Grid2';
-import {SectionTitle} from "../form/SectionTitle";
-import {useSelector} from "react-redux";
-import {RootState} from "../../redux/store";
+import { Control } from "react-hook-form";
+import { useSelector } from "react-redux";
+
+import { RootState } from "../../redux/store";
+import { IFormInput } from "../../screens/CharacterSheet";
+import { FormInputText } from "../form/FormInputText";
+import { SectionTitle } from "../form/SectionTitle";
 
 type MedalCountProps = {
   control: Control<IFormInput, any>;

@@ -1,6 +1,12 @@
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+} from "@mui/material";
+import { Control, Controller, useController } from "react-hook-form";
 
-import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import { Control, Controller } from "react-hook-form";
 import { IFormInput } from "../../../screens/CharacterSheet";
 
 export type DropdownOption = {
@@ -9,15 +15,17 @@ export type DropdownOption = {
 };
 
 type FormInputDropdownProps = {
-	name: string;
-	control: any;
-	label: string; 
+  name: string;
+  control: any;
+  label: string;
   defaultValue: string;
   options: DropdownOption[];
-}
+  onChange: (value: string) => void;
+};
 
 export const FormInputDropdown = (props: FormInputDropdownProps) => {
-  const { name, control, label, options, defaultValue } = props;
+  const { name, control, label, options, defaultValue, onChange } = props;
+  const { field } = useController({ name, control });
 
   const generateSingleOptions = () => {
     return options.map((option: any) => {
@@ -29,26 +37,25 @@ export const FormInputDropdown = (props: FormInputDropdownProps) => {
     });
   };
 
+  const handleOnChange = (event: SelectChangeEvent) => {
+    field.onChange(event);
+    onChange(event.target.value);
+  };
+
   const labelId = `dropdown-label-${name}`;
 
   return (
     <FormControl size={"small"} sx={{ width: "100%" }}>
       <InputLabel id={labelId}>{label}</InputLabel>
-      <Controller
-        render={({ field: { onChange, value } }) => (
-          <Select 
-            labelId={labelId}
-            onChange={onChange} 
-            value={value} 
-            defaultValue={defaultValue}
-            sx={{}}
-          >
-            {generateSingleOptions()}
-          </Select>
-        )}
-        control={control}
-        name={name}
-      />
+      <Select
+        labelId={labelId}
+        onChange={handleOnChange}
+        value={field.value}
+        defaultValue={defaultValue}
+        sx={{}}
+      >
+        {generateSingleOptions()}
+      </Select>
     </FormControl>
   );
 };

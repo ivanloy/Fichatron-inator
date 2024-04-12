@@ -1,17 +1,18 @@
-import {Control} from "react-hook-form";
-import {IFormInput} from "../../screens/CharacterSheet";
-import {FormInputText} from "../form/FormInputText";
-import Grid from '@mui/material/Unstable_Grid2';
-import {KnowledgeItem} from "./KnowledgeLevels";
+import Grid from "@mui/material/Unstable_Grid2";
+import { Control } from "react-hook-form";
+
+import { IFormInput } from "../../screens/CharacterSheet";
+import { FormInputText } from "../form/FormInputText";
+import { KnowledgeItem } from "./KnowledgeLevels";
 
 type KnowledgeRowProps = {
   control: Control<IFormInput, any>;
   id: string;
   knowledgeData: KnowledgeItem;
-}
+};
 
 export const KnowledgeRow = (props: KnowledgeRowProps) => {
-  const {control, id, knowledgeData} = props;
+  const { control, id, knowledgeData } = props;
 
   return (
     <>
@@ -25,12 +26,12 @@ export const KnowledgeRow = (props: KnowledgeRowProps) => {
       </Grid>
       <Grid xs={6} lg={6}>
         <FormInputText
-          stateValue={knowledgeData.level}
-          name={`${id}.level`}
+          stateValue={knowledgeData.value}
+          name={`${id}.value`}
           control={control}
           label="Nivel"
         />
       </Grid>
     </>
-  )
-}
+  );
+};

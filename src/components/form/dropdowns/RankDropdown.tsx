@@ -1,15 +1,17 @@
 import { Control } from "react-hook-form";
+
 import { IFormInput } from "../../../screens/CharacterSheet";
 import { DropdownOption, FormInputDropdown } from "./FormInputDropdown";
 
 type RankDropdownProps = {
   id: string;
   control: Control<IFormInput, any>;
-}
+  onChange: (value: string) => void;
+};
 
 export const RankDropdown = (props: RankDropdownProps) => {
-  const { control, id } = props;
-  const options : DropdownOption[] = [
+  const { control, id, onChange } = props;
+  const options: DropdownOption[] = [
     {
       label: "S",
       value: "120",
@@ -43,10 +45,11 @@ export const RankDropdown = (props: RankDropdownProps) => {
   return (
     <FormInputDropdown
       name={`rank-name-${id}`}
+      onChange={onChange}
       control={control}
       label="Rango"
       defaultValue="2"
       options={options}
     />
   );
-}
+};

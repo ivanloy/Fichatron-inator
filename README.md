@@ -1,18 +1,21 @@
 # El fichatrón (inator) ha llegado
+
 Y está aquí para quedarse!!
 
 ## Progreso 1.0
+
 - [x] Layout
-- [ ] Importar datos con html de ficha
+- [x] Importar datos con html de ficha
 - [ ] Header
 - [ ] Tablas fortalezas/debilidades/técnicas/objetos
 - [ ] Conexion con base de datos
-- [ ] State logic
+- [x] State logic
 - [ ] Tabla fichas base de datos
-- [ ] Exportar html ficha
+- [x] Exportar html ficha
 - [ ] Código / Pin / Contraseña para proteger edicion de tu ficha
 
 ## Backlog 1.X
+
 - Requisitos técnicas con <Chip>
 - Dropdown o autocomplete saberes
 - Dropdown facción con generacion de sus medallas
@@ -27,9 +30,11 @@ Y está aquí para quedarse!!
 - Campos custom
 
 ## Para nuevas ideas, features o diseños
+
 Contacto por MD de discord a "ivanloy"
 
 ## Si quieres aportar algo...
+
 - <b>components</b> (Atomic components)
   - <b>characterSheet</b> (Main components for the character sheet's different fields)
   - <b>form </b>(Components using react-hook-form and MUI together. Also useful repeated components to be used on forms)
